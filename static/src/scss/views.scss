@@ -1,0 +1,16 @@
+// Enterprise-style list view
+.o_list_renderer {
+    --ListRenderer-thead-border-end-color: transparent;
+}
+
+// Enterprise-style kanban quick create
+.o_kanban_view {
+    .o_column_quick_create .o_kanban_quick_create {
+        input {
+            &, &:focus, &:hover {
+                background: transparent;
+                border-bottom: 1px solid map-get($grays, '600');
+            }
+        }
+    }
+}

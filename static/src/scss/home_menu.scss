@@ -1,0 +1,100 @@
+// Enterprise home menu design applied to Community app switcher
+
+.o_home_menu_background {
+    &:not(.o_home_menu_background_custom):not(.o_in_studio) .o_main_navbar {
+        background: transparent;
+        border-bottom-color: transparent;
+
+        .o_dropdown_active,
+        > ul > li.show > a {
+            outline: none;
+        }
+    }
+
+    &.o_home_menu_background_custom .o_home_menu {
+        background: {
+            size: cover;
+            repeat: no-repeat;
+            position: center;
+        }
+    }
+}
+
+.o_home_menu {
+    font-size: $o-home-menu-font-size-base;
+
+    > .container {
+        max-width: $o-home-menu-container-size;
+    }
+    scrollbar-color: #{rgba($body-color, .5)} transparent;
+
+    &::-webkit-scrollbar {
+        width: map-get($spacers, 2);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #{rgba($body-color, .5)};
+        border-radius: $border-radius-pill;
+    }
+
+    .o_app {
+        --AppSwitcherIcon-box-shadow: var(--AppSwitcherIcon-inset-shadow, inset 0 0 0 1px rgba(0,0,0, .2)),
+            0 1px 1px rgba(0, 0, 0, .02),
+            0 2px 2px rgba(0, 0, 0, .02),
+            0 4px 4px rgba(0, 0, 0, .02),
+            0 8px 8px rgba(0, 0, 0, .02),
+            0 16px 16px rgba(0, 0, 0, .02);
+        --AppSwitcherIcon-transition: box-shadow ease-in 0.1s, transform ease-in 0.1s;
+
+        .o_app_icon {
+            max-width: $o-home-menu-app-icon-max-width;
+            padding: $o-home-menu-app-icon-padding;
+            background-color: $o-home-menu-app-icon-background-color;
+            transform-origin: center bottom;
+            transform: var(--AppSwitcherIcon-transform);
+            transition: var(--AppSwitcherIcon-transition);
+            box-shadow: var(--AppSwitcherIcon-box-shadow);
+        }
+
+        &:hover {
+            --AppSwitcherIcon-box-shadow: var(--AppSwitcherIcon-inset-shadow, inset 0 0 0 1px rgba(0, 0, 0, 0.2)),
+                0 2px 2px rgba(0, 0, 0, 0.03),
+                0 4px 4px rgba(0, 0, 0, 0.03),
+                0 8px 8px rgba(0, 0, 0, 0.03),
+                0 12px 12px rgba(0, 0, 0, 0.03),
+                0 24px 24px rgba(0, 0, 0, 0.03);
+            --AppSwitcherIcon-transform: translateY(-2px);
+        }
+
+        &:active {
+            --AppSwitcherIcon-transform: translateY(-2px) scale(.98);
+            --AppSwitcherIcon-transition: none;
+        }
+
+        .o_caption {
+            color: var(--homeMenuCaption-color, #{$o-main-text-color});
+        }
+
+        &.o_focused {
+            background: $component-active-bg;
+            outline: 1px solid $o-action;
+            border-radius: $border-radius;
+        }
+    }
+
+    .o_dragged_app {
+        transition: transform 0.5s;
+        transform: rotate(6deg);
+        .o_app_icon {
+            box-shadow: 0 8px 15px -10px black;
+            transform: translateY(-1px);
+        }
+    }
+}
+
+.o_home_menu_background_custom {
+    .o_home_menu .o_app .o_caption {
+        color: #fff;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, .75), 0 2px 5px rgba(0, 0, 0, .05), 0 0 5px rgba(0, 0, 0, .05);
+    }
+}

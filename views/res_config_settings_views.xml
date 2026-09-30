@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_inherit_m4t_theme" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.m4t.theme</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='general_settings']" position="inside">
+                <block title="Home Menu Background" name="home_menu_background">
+                    <setting string="Custom Background Image" help="Upload a custom background image for the home menu.">
+                        <field name="home_menu_background_image" widget="image" class="oe_avatar"/>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
