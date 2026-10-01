@@ -2,7 +2,7 @@
 {
     'name': 'M4T Enterprise Theme',
     'version': '19.0.1.0.0',
-    'category': 'Hidden',
+    'category': '',
     'sequence': 1,
     'summary': 'Enterprise-style look and feel for Odoo 19 Community',
     'description': """
