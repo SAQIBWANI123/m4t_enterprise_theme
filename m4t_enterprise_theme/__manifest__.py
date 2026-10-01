@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'M4T Enterprise Theme',
-    'version': '19.0.2.0.0',
+    'version': '19.0.1.0.0',
     'category': 'Hidden',
     'sequence': 1,
     'summary': 'Enterprise-style look and feel for Odoo 19 Community',
